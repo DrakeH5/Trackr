@@ -6,10 +6,25 @@
   <title>Trackr</title>
   <script src="https://cdn.maptiler.com/maptiler-sdk-js/v2.0.3/maptiler-sdk.umd.min.js"></script>
   <link href="https://cdn.maptiler.com/maptiler-sdk-js/v2.0.3/maptiler-sdk.css" rel="stylesheet" />
-  
+  <script src="https://cdn.maptiler.com/maptiler-geocoding-control/v1.2.0/maptilersdk.umd.js"></script>
+  <link href="https://cdn.maptiler.com/maptiler-geocoding-control/v1.2.0/style.css" rel="stylesheet">
+
   <style>
     body { margin: 0; padding: 0; }
     #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    .coordinates {
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        position: absolute;
+        bottom: 40px;
+        left: 10px;
+        padding: 5px 10px;
+        margin: 0;
+        font-size: 11px;
+        line-height: 18px;
+        border-radius: 3px;
+        display: none;
+    }
   </style>
 
 </head>
@@ -17,10 +32,10 @@
 <body>
 
   <div id="map"></div>
+  <pre id="coordinates" class="coordinates"></pre>
   
   <script src="./map.js"></script>
-  <script>
-      
-  </script>
+  <script src="trailcams.js"></script>
+  <script src="geocoder.js"></script>
 </body>
 </html>
