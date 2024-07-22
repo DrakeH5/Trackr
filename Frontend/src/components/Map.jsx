@@ -6,8 +6,8 @@ import './map.css';
 export default function Map() {
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const tokyo = { lng: 139.753, lat: 35.6844 };
-  const [zoom] = useState(14);
+  const start = { lng: -97, lat: 35 };
+  const [zoom] = useState(3.5);
   maptilersdk.config.apiKey = 'JmXBghQQLs4ZM5NeVxab';
 
   useEffect(() => {
@@ -16,11 +16,11 @@ export default function Map() {
     map.current = new maptilersdk.Map({
       container: mapContainer.current,
       style: maptilersdk.MapStyle.STREETS,
-      center: [tokyo.lng, tokyo.lat],
+      center: [start.lng, start.lat],
       zoom: zoom
     });
 
-  }, [tokyo.lng, tokyo.lat, zoom]);
+  }, [start.lng, start.lat, zoom]);
 
   return (
     <div className="map-wrap">
